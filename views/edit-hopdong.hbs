@@ -1,0 +1,56 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="text-center mb-4">
+                <h2>Sửa Hợp Đồng</h2>
+            </div>
+            {{#with data}}
+            <form action="/hopdong/update/{{this._id}}" method="POST">
+                <!-- Mã Hợp Đồng -->
+                <div class="form-group mb-3">
+                    <label for="MaHD">Mã Hợp Đồng</label>
+                    <input value="{{this.MaHD}}" type="text" class="form-control" id="MaHD" name="MaHD" required>
+                </div>
+
+                <!-- Mã Nhà Cung Cấp -->
+                <div class="form-group mb-3">
+                    <label for="MaNCC">Mã Nhà Cung Cấp</label>
+                    <select class="form-control" id="MaNCC" name="MaNCC" required>
+        <option value="">Chọn Nhà Cung Cấp</option>
+        <option value="{{this.MaNCC}}" selected>{{this.MaNCC}}</option>
+        {{#each ncc}}
+            <option value="{{this.MaNCC}}">{{this.MaNCC}} - {{this.TenNCC}}</option>
+        {{/each}}
+    </select>
+                </div>
+
+                <!-- Ngày Lập -->
+                <div class="form-group mb-3">
+                    <label for="NgayLap">Ngày Lập</label>
+                    <input value="{{this.NgayLap}}" type="text" class="form-control" id="NgayLap" name="NgayLap"
+                        required>
+                </div>
+
+
+                <!-- Tổng Giá Trị -->
+                <div class="form-group mb-3">
+                    <label for="TongGiaTri">Tổng Giá Trị</label>
+                    <input value="{{this.TongGiaTri}}" type="number" class="form-control" id="TongGiaTri"
+                        name="TongGiaTri" required step="0.01">
+                </div>
+
+                <!-- Trạng Thái -->
+                <div class="form-group mb-3">
+                    <label for="TrangThai">Trạng Thái</label>
+                    <input value="{{this.TrangThai}}" type="text" class="form-control" id="TrangThai" name="TrangThai"
+                        required>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Sửa Hợp Đồng</button>
+            </form>
+            {{/with}}
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>

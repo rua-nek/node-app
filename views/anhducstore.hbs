@@ -1,0 +1,57 @@
+<div class="container-fluid mt-5">
+  <div class="row">
+    <div class="col-2">
+      <ul class="list-group">
+        <li class="list-group-item"><a href="/ncc">Quản lý nhà cung cấp</a></li>
+        <li class="list-group-item"><a href="/vatlieu">Quản lý vật liệu</a></li>
+        <li class="list-group-item"><a href="/hopdong">Quản lý hợp đồng</a></li>
+        <li class="list-group-item"><a href="/duan">Quản lý dự án</a></li>
+        <li class="list-group-item">And a fifth one</li>
+      </ul>
+    </div>
+    <div class="col-10">
+      <div class="row">
+        <div class="col-6">
+          <h2>Danh sách Vật Liệu</h2>
+        </div>
+        <div class="col-6">
+          <button onclick="window.location.href='/vatlieu/add-vatlieu'" class="btn btn-primary">Thêm</button>
+        </div>
+
+      </div>
+      <div class="row">
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">mã vật liệu</th>
+              <th scope="col">Tên Vật liệu</th>
+              <th scope="col">Mã loại</th>
+              <th scope="col">Đơn vị tính</th>
+              <th scope="col">giá vật liệu</th>
+              <th scope="col">Thao tác</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each data}}
+            <tr>
+              <th scope="row">{{@index}}</th>
+              <td>{{MaVL}}</td>
+              <td>{{TenVL}}</td>
+              <td>{{Maloai}}</td>
+              <td>{{DonViTinh}}</td>
+              <td>{{GiaVL}}</td>
+              <td>
+                <button onclick="window.location.href='/vatlieu/edit/{{this._id}}'" class="btn btn-primary">Sửa</button>
+                <button onclick="window.location.href='/vatlieu/delete/{{this._id}}'" class="btn btn-danger">Xóa</button>
+              </td>
+            </tr>
+            {{/each}}
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

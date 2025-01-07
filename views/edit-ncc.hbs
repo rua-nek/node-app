@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="row">
+                <h2>Sửa Nhà Cung Cấp</h2>
+            </div>
+            <div class="row">
+                {{#with data}}
+                <form action="/ncc/update/{{this._id}}" method="POST">
+                    <div class="form-group">
+                        <label for="MaNCC">Mã Nhà Cung Cấp</label>
+                        <input value="{{this.MaNCC}}" type="text" class="form-control" id="MaNCC" name="MaNCC" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="TenNCC">Tên Nhà Cung Cấp</label>
+                        <input value="{{this.TenNCC}}" type="text" class="form-control" id="TenNCC" name="TenNCC" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="DiaChi">Địa Chỉ</label>
+                        <input value="{{this.DiaChi}}" type="text" class="form-control" id="DiaChi" name="DiaChi" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="SoDienThoai">Số Điện Thoại</label>
+                        <input value="{{this.SoDienThoai}}" type="text" class="form-control" id="SoDienThoai" name="SoDienThoai" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Email">Email</label>
+                        <input value="{{this.Email}}" type="email" class="form-control" id="Email" name="Email" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block mt-3">Sửa Nhà Cung Cấp</button>
+                </form>
+                {{/with}}
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>

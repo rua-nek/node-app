@@ -1,0 +1,50 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="text-center mb-4">
+                <h2>Thêm Hợp Đồng Mới</h2>
+            </div>
+            <form action="/hopdong/add-hopdong" method="POST">
+                <!-- Mã Hợp Đồng -->
+                <div class="form-group mb-3">
+                    <label for="MaHD">Mã Hợp Đồng</label>
+                    <input type="text" class="form-control" id="MaHD" name="MaHD" required>
+                </div>
+
+                <!-- Mã Nhà Cung Cấp -->
+                <div class="form-group mb-3">
+                    <label for="MaNCC">Mã Nhà Cung Cấp</label>
+                    <select class="form-control" id="MaNCC" name="MaNCC" required>
+                        <option value="">Chọn Nhà Cung Cấp</option>
+                        {{#each data}}
+                        <option value="{{this.MaNCC}}">{{this.MaNCC}} - {{this.TenNCC}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+
+                <!-- Ngày Lập -->
+                <div class="form-group mb-3">
+                    <label for="NgayLap">Ngày Lập</label>
+                    <input type="date" class="form-control" id="NgayLap" name="NgayLap" required>
+                </div>
+
+
+                <!-- Tổng Giá Trị -->
+                <div class="form-group mb-3">
+                    <label for="TongGiaTri">Tổng Giá Trị</label>
+                    <input type="number" class="form-control" id="TongGiaTri" name="TongGiaTri" required step="0.01">
+                </div>
+
+                <!-- Trạng Thái -->
+                <div class="form-group mb-3">
+                    <label for="TrangThai">Trạng Thái</label>
+                    <input type="text" class="form-control" id="TrangThai" name="TrangThai" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Thêm Hợp Đồng</button>
+            </form>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>

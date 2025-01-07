@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="row">
+                <h2>Sửa Dự Án</h2>
+            </div>
+            <div class="row">
+                {{#with data}}
+                <form action="/duan/update/{{this._id}}" method="POST">
+                    <!-- Mã Dự Án -->
+                    <div class="form-group">
+                        <label for="MaDA">Mã Dự Án</label>
+                        <input type="text" class="form-control" id="MaDA" name="MaDA" value="{{MaDA}}" required>
+                    </div>
+                    
+                    <!-- Tên Dự Án -->
+                    <div class="form-group">
+                        <label for="TenDA">Tên Dự Án</label>
+                        <input type="text" class="form-control" id="TenDA" name="TenDA" value="{{TenDA}}" required>
+                    </div>
+                    
+                    <!-- Địa Điểm -->
+                    <div class="form-group">
+                        <label for="DiaDiem">Địa Điểm</label>
+                        <input type="text" class="form-control" id="DiaDiem" name="DiaDiem" value="{{DiaDiem}}" required>
+                    </div>
+                    
+                    <!-- Thời Gian Bắt Đầu -->
+                    <div class="form-group">
+                        <label for="ThoiGianBatDau">Thời Gian Bắt Đầu</label>
+                        <input type="text" class="form-control" id="ThoiGianBatDau" name="ThoiGianBatDau" value="{{ThoiGianBatDau}}" required>
+                    </div>
+                    
+                    <!-- Thời Gian Kết Thúc -->
+                    <div class="form-group">
+                        <label for="ThoiGianKetThuc">Thời Gian Kết Thúc</label>
+                        <input type="text" class="form-control" id="ThoiGianKetThuc" name="ThoiGianKetThuc" value="{{ThoiGianKetThuc}}" required>
+                    </div>
+                    
+                    <!-- Nút Submit -->
+                    <button type="submit" class="btn btn-primary">Cập Nhật Dự Án</button>
+                </form>
+                {{/with}}
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="container-fluid mt-5">
+  <div class="row">
+    <div class="col-2">
+      <ul class="list-group">
+        <li class="list-group-item"><a href="/ncc">Quản lý nhà cung cấp</a></li>
+        <li class="list-group-item"><a href="/vatlieu">Quản lý vật liệu</a></li>
+        <li class="list-group-item"><a href="/hopdong">Quản lý hợp đồng</a></li>
+        <li class="list-group-item"><a href="/duan">Quản lý dự án</a></li>
+        <li class="list-group-item">And a fifth one</li>
+      </ul>
+    </div>
+    <div class="col-10">
+      <div class="row">
+        <div class="col-6">
+          <h2>Hợp Đồng</h2>
+        </div>
+        <div class="col-6">
+          <button onclick="window.location.href='/hopdong/add-hopdong'" class="btn btn-primary">Thêm</button>
+        </div>
+
+      </div>
+      <div class="row">
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Mã HD</th>
+              <th scope="col">Ngày Lập</th>
+              <th scope="col">Mã NCC</th>
+              <th scope="col">Tổng Giá Trị</th>
+              <th scope="col">Trạng Thái</th>
+              <th scope="col">Thao Tác</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each data}}
+            <tr>
+              <th scope="row">{{@index}}</th>
+              <td>{{MaHD}}</td>
+              <td>{{NgayLap}}</td>
+              <td>{{MaNCC}}</td>
+              <td>{{TongGiaTri}}
+              <td>{{TrangThai}}</td>
+              <td>
+                <button onclick="window.location.href='/hopdong/edit/{{_id}}'" class="btn btn-primary">Sửa</button>
+                <button onclick="window.location.href='/hopdong/delete/{{_id}}'" class="btn btn-danger">Xóa</button>
+              </td>
+
+              </td>
+            </tr>
+            {{/each}}
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="row">
+                <h2>Thêm Dự án</h2>
+            </div>
+            <div class="row">
+                <form action="/duan/add-duan" method="POST">
+                    <div class="form-group">
+                        <label for="MaDA">Mã Dự Án</label>
+                        <input type="text" class="form-control" id="MaDA" name="MaDA" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="TenDA">Tên Dự Án</label>
+                        <input type="text" class="form-control" id="TenDA" name="TenDA" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="DiaDiem">Địa Điểm</label>
+                        <input type="text" class="form-control" id="DiaDiem" name="DiaDiem" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ThoiGianBatDau">Thời Gian Bắt Đầu</label>
+                        <input type="date" class="form-control" id="ThoiGianBatDau" name="ThoiGianBatDau" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ThoiGianKetThuc">Thời Gian Kết Thúc</label>
+                        <input type="date" class="form-control" id="ThoiGianKetThuc" name="ThoiGianKetThuc" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Thêm Dự Án</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>

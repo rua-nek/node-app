@@ -1,0 +1,57 @@
+<div class="container-fluid mt-5">
+  <div class="row">
+    <div class="col-2">
+      <ul class="list-group">
+        <li class="list-group-item"><a href="/ncc">Quản lý nhà cung cấp</a></li>
+        <li class="list-group-item"><a href="/vatlieu">Quản lý vật liệu</a></li>
+        <li class="list-group-item"><a href="/hopdong">Quản lý hợp đồng</a></li>
+        <li class="list-group-item"><a href="/duan">Quản lý dự án</a></li>
+        <li class="list-group-item">And a fifth one</li>
+      </ul>
+    </div>
+    <div class="col-10">
+      <div class="row">
+        <div class="col-6">
+          <h2>Dự án</h2>
+        </div>
+        <div class="col-6">
+          <button onclick="window.location.href='/duan/add-duan'" class="btn btn-primary">Thêm</button>
+        </div>
+
+      </div>
+      <div class="row">
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">MaDA</th>
+              <th scope="col">Ten DA</th>
+              <th scope="col">Dia Diem</th>
+              <th scope="col">Thoi Gian Bat Dau</th>
+              <th scope="col">Thoi Gian Ket Thuc</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each data}}
+            <tr>
+              <th scope="row">1</th>
+              <td>{{MaDA}}</td>
+              <td>{{TenDA}}</td>
+              <td>{{DiaDiem}}</td>
+              <td>{{ThoiGianBatDau}}</td>
+              <td>{{ThoiGianKetThuc}}</td>
+              <td>
+                <button onclick="window.location.href='/duan/edit/{{_id}}'" class="btn btn-primary">Sửa</button>
+                <button onclick="window.location.href='/duan/delete/{{_id}}'" class="btn btn-danger">Xóa</button>
+              </td>
+            </tr>
+            {{/each}}
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

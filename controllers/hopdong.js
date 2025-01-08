@@ -1,4 +1,5 @@
 const HopDong = require('../models/hopdong');
+const nhacungcap = require('../models/nhacungcap');
 const NhaCungCap = require('../models/nhacungcap');
 class hopdong {
     index  = async (req, res) => {
@@ -57,7 +58,7 @@ class hopdong {
         const hopdongData = await HopDong.findById(req.params.id).lean();
         const nhaCungCapData = await NhaCungCap.find().lean();
         console.log(nhaCungCapData);
-        res.render('edit-hopdong', { title: 'Chỉnh Sửa Hợp Đồng', data: hopdongData, ncc : nhaCungCapData });
+        res.render('edit-hopdong', { title: 'Chỉnh Sửa Hợp Đồng', data: hopdongData, nhacungcap : nhaCungCapData });
     }
 
     // Cập nhật hợp đồng

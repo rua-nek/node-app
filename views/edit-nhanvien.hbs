@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="row">
+                <h2>Sửa Nhân Viên</h2>
+            </div>
+            <div class="row">
+                {{#with data}}
+                <form class="mt-5" action="/nhanvien/update/{{_id}}" method="POST">
+                    <!-- Tên Nhân Viên -->
+                    <div class="form-group">
+                        <label for="TenNV">Tên Nhân Viên</label>
+                        <input value="{{TenNV}}" type="text" class="form-control" id="TenNV" name="TenNV" required>
+                    </div> 
+                    <!-- Ngày Sinh -->
+                    <div class="form-group">
+                        <label for="NgaySinh">Ngày Sinh</label>
+                        <input value="{{formatDate NgaySinh}}" type="text" class="form-control" id="NgaySinh" name="NgaySinh" required>
+                    </div>
+                    
+                    <!-- Địa Chỉ -->
+                    <div class="form-group">
+                        <label for="DiaChi">Địa Chỉ</label>
+                        <input value="{{DiaChi}}" type="text" class="form-control" id="DiaChi" name="DiaChi" required>
+                    </div>
+                    
+                    <!-- Số Điện Thoại -->
+                    <div class="form-group">
+                        <label for="SoDienThoai">Số Điện Thoại</label>
+                        <input value="{{SoDienThoai}}" type="text" class="form-control" id="SoDienThoai" name="SoDienThoai" required pattern="[0-9]{10}" title="Vui lòng nhập 10 số điện thoại">
+                    </div>
+                    
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="Email">Email</label>
+                        <input value="{{Email}}" type="email" class="form-control" id="Email" name="Email" required>
+                    </div>
+                    
+                    <!-- Nút Gửi -->
+                    <button type="submit" class="btn btn-primary btn-block mt-3">Sửa Nhân Viên</button>
+                </form>
+                {{/with}}
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>

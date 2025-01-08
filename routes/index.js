@@ -6,6 +6,7 @@ var vatlieu = require('./vatlieu.js');
 var ncc = require('./ncc.js');
 var hopdong = require('./hopdong.js');
 var duan = require('./duan.js');
+var nhanvien = require('./nhanvien.js');
 const Account = require('../models/account');
 
 /* GET home page. */
@@ -18,11 +19,11 @@ router.post('/', function(req, res, next) {
     password: 123456,
   });
   newAccount.save()
-
 });
 router.use('/users', users);
 router.use('/home', home);
 router.use('/duan', duan);
+router.use('/nhanvien', nhanvien);
 router.use('/hopdong', hopdong);
 router.use('/vatlieu', vatlieu);
 router.use('/ncc', ncc);

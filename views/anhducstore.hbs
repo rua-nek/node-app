@@ -6,7 +6,7 @@
         <li class="list-group-item"><a href="/vatlieu">Quản lý vật liệu</a></li>
         <li class="list-group-item"><a href="/hopdong">Quản lý hợp đồng</a></li>
         <li class="list-group-item"><a href="/duan">Quản lý dự án</a></li>
-        <li class="list-group-item">And a fifth one</li>
+        <li class="list-group-item"><a href="/nhanvien">Quản lý nhân viên</a></li>
       </ul>
     </div>
     <div class="col-10">
@@ -41,7 +41,7 @@
               <td>{{TenVL}}</td>
               <td>{{Maloai}}</td>
               <td>{{DonViTinh}}</td>
-              <td>{{GiaVL}}</td>
+              <td>{{formatCurrency GiaVL}}</td>
               <td>
                 <button onclick="window.location.href='/vatlieu/edit/{{this._id}}'" class="btn btn-primary">Sửa</button>
                 <button onclick="window.location.href='/vatlieu/delete/{{this._id}}'" class="btn btn-danger">Xóa</button>

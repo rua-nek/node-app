@@ -12,10 +12,10 @@
         <div class="col-10">
             <div class="row">
                 <div class="col-6">
-                    <h2>Nhà cung cấp</h2>
+                    <h2>Nhân viên</h2>
                 </div>
                 <div class="col-6">
-                    <button onclick="window.location.href='/ncc/add-ncc'" class="btn btn-primary">Thêm</button>
+                    <button onclick="window.location.href='/nhanvien/add-nhanvien'" class="btn btn-primary">Thêm</button>
                 </div>
 
             </div>
@@ -25,9 +25,10 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Mã NCC</th>
-                            <th scope="col">Tên NCC</th>
-                            <th scope="col">Địa Chỉ</th>
+                            <th scope="col">Mã NV</th>
+                            <th scope="col">Ten NV</th>
+                            <th scope="col">Giới Tính</th>
+                            <th scope="col">Địa Chị</th>
                             <th scope="col">Số Điện Thoại</th>
                             <th scope="col">Email</th>
                             <th scope="col">Thao tác</th>
@@ -37,14 +38,15 @@
                         {{#each data}}
                         <tr>
                             <th scope="row">{{@index}}</th>
-                            <td>{{MaNCC}}</td>
-                            <td>{{TenNCC}}</td>
+                            <td>{{MaNV}}</td>
+                            <td>{{TenNV}}</td>
+                            <td>{{GioiTinh}}</td>
                             <td>{{DiaChi}}</td>
                             <td>{{SoDienThoai}}</td>
                             <td>{{Email}}</td>
                             <td>
-                                <button onclick="window.location.href='/ncc/edit/{{_id}}'" class="btn btn-primary">Sửa</button>
-                                <button onclick="window.location.href='/ncc/delete/{{_id}}'" class="btn btn-danger">Xóa</button>
+                                <button onclick="window.location.href='/nhanvien/edit/{{_id}}'" class="btn btn-primary">Sửa</button>
+                                <button onclick="window.location.href='/nhanvien/delete/{{_id}}'" class="btn btn-danger">Xóa</button>
                             </td>
                         </tr>
                         {{/each}}

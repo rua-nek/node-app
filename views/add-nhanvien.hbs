@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="row">
+                <h2>Thêm Nhân Viên</h2>
+            </div>
+            <div class="row">
+                <form class="mt-5" action="/nhanvien/add-nhanvien" method="POST">
+                    <!-- Tên Nhân Viên -->
+                    <div class="form-group">
+                        <label for="TenNV">Tên Nhân Viên</label>
+                        <input type="text" class="form-control" id="TenNV" name="TenNV" required>
+                    </div>
+                    
+                    <!-- Giới Tính -->
+                    <div class="form-group">
+                        <label for="GioiTinh">Giới Tính</label>
+                        <select class="form-control" id="GioiTinh" name="GioiTinh" required>
+                            <option value="Nam">Nam</option>
+                            <option value="Nữ">Nữ</option>
+                            <option value="Khác">Khác</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Ngày Sinh -->
+                    <div class="form-group">
+                        <label for="NgaySinh">Ngày Sinh</label>
+                        <input type="date" class="form-control" id="NgaySinh" name="NgaySinh" required>
+                    </div>
+                    
+                    <!-- Địa Chỉ -->
+                    <div class="form-group">
+                        <label for="DiaChi">Địa Chỉ</label>
+                        <input type="text" class="form-control" id="DiaChi" name="DiaChi" required>
+                    </div>
+                    
+                    <!-- Số Điện Thoại -->
+                    <div class="form-group">
+                        <label for="SoDienThoai">Số Điện Thoại</label>
+                        <input type="text" class="form-control" id="SoDienThoai" name="SoDienThoai" required pattern="[0-9]{10}" title="Vui lòng nhập 10 số điện thoại">
+                    </div>
+                    
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="Email">Email</label>
+                        <input type="email" class="form-control" id="Email" name="Email" required>
+                    </div>
+                    
+                    <!-- Nút Gửi -->
+                    <button type="submit" class="btn btn-primary btn-block mt-3">Thêm Nhân Viên</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>

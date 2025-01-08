@@ -12,7 +12,19 @@ var app = express();
 // view engine setup
 const hbs = exphbs.create({
   defaultLayout: 'main',
-  extname: '.hbs'
+  extname: '.hbs',
+  helpers: {
+    formatDate: function (date) {
+      return date.toLocaleDateString( 'vi-VN');
+    },
+    formatCurrency: (value) => {
+      return new Intl.NumberFormat('vi-VN', {
+          style: 'currency',
+          currency: 'VND'
+      }).format(value).replace('₫', 'VNĐ');
+  },
+  }
+
 });
 app.engine('.hbs', hbs.engine);
 app.set('view engine', '.hbs');

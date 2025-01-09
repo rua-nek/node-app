@@ -11,7 +11,7 @@ const Account = require('../models/account');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Express', layout: 'login' });
 });
 router.post('/', function(req, res, next) {
   const newAccount = new Account({

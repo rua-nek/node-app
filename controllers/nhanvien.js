@@ -33,11 +33,22 @@ class NhanVienController {
                 SoDienThoai,
                 Email,
             } = req.body;
-            
+        
+            // Check for existing phone number
+            const existingPhone = await nhanvien.findOne({ SoDienThoai });
+            if (existingPhone) {
+                return res.status(400).send('Số điện thoại đã tồn tại trong hệ thống!');
+            }
+        
+            // Check for existing email
+            const existingEmail = await nhanvien.findOne({ Email });
+            if (existingEmail) {
+                return res.status(400).send('Email đã tồn tại trong hệ thống!');
+            }
+        
             let MaNV;
             let existingMaNV;
             
-            // Vòng lặp while để tạo MaNV mới
             while (true) {
                 MaNV = `NV${Math.floor(Math.random() * 100 + 1)}`;
                 existingMaNV = await nhanvien.findOne({ MaNV });
@@ -87,9 +98,9 @@ class NhanVienController {
     // Cập nhật thông tin nhân viên
     updatenhanvien = async (req, res) => {
         try {
-            const { TenNV, NgaySinh, DiaChi, SoDienThoai, Email } = req.body;
+            const { TenNV, GioiTinh, NgaySinh, DiaChi, SoDienThoai, Email } = req.body;
             await nhanvien.updateOne({ _id: req.params.id }, {
-                 TenNV, NgaySinh, DiaChi, SoDienThoai, Email
+                 TenNV, GioiTinh, NgaySinh, DiaChi, SoDienThoai, Email
             });
             res.redirect('/nhanvien');
         } catch (err) {

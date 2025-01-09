@@ -57,8 +57,9 @@ class hopdong {
     edithopdong = async (req, res) => {
         const hopdongData = await HopDong.findById(req.params.id).lean();
         const nhaCungCapData = await NhaCungCap.find().lean();
-        console.log(nhaCungCapData);
-        res.render('edit-hopdong', { title: 'Chỉnh Sửa Hợp Đồng', data: hopdongData, nhacungcap : nhaCungCapData });
+        const data = {hopdong: hopdongData, nhacungcap: nhaCungCapData};
+        console.log(data);
+        res.render('edit-hopdong', { title: 'Chỉnh Sửa Hợp Đồng', data: data });
     }
 
     // Cập nhật hợp đồng

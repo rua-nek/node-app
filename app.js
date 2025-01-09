@@ -15,14 +15,17 @@ const hbs = exphbs.create({
   extname: '.hbs',
   helpers: {
     formatDate: function (date) {
-      return date.toLocaleDateString( 'vi-VN');
+      return date.toLocaleDateString('vi-VN');
     },
     formatCurrency: (value) => {
       return new Intl.NumberFormat('vi-VN', {
-          style: 'currency',
-          currency: 'VND'
+        style: 'currency',
+        currency: 'VND'
       }).format(value).replace('₫', 'VNĐ');
-  },
+    },
+    eq : function (v1, v2) {
+      return v1 === v2;
+    }
   }
 
 });
@@ -43,23 +46,23 @@ const db = mongoose.connection;
 
 // Lắng nghe sự kiện lỗi
 db.on('error', (err) => {
-    console.error('MongoDB connection error:', err);
+  console.error('MongoDB connection error:', err);
 });
 
 // Lắng nghe sự kiện kết nối thành công
 db.once('open', () => {
-    console.log('MongoDB connected successfully!');
+  console.log('MongoDB connected successfully!');
 });
 
 app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

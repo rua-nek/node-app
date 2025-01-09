@@ -13,6 +13,16 @@
                         <label for="TenNV">Tên Nhân Viên</label>
                         <input value="{{TenNV}}" type="text" class="form-control" id="TenNV" name="TenNV" required>
                     </div> 
+                    <!-- Giới Tính -->
+                    <div class="form-group">
+                        <label for="GioiTinh">Giới Tính</label>
+                        <select class="form-control" id="GioiTinh" name="GioiTinh" required>
+
+                            <option value="Nam" {{#if (eq GioiTinh "Nam")}}selected{{/if}}>Nam</option>
+                            <option value="Nữ" {{#if (eq GioiTinh "Nữ")}}selected{{/if}}>Nữ</option>
+                            <option value="Khác" {{#if (eq GioiTinh "Khác")}}selected{{/if}}>Khác</option>
+                        </select>
+                    </div>
                     <!-- Ngày Sinh -->
                     <div class="form-group">
                         <label for="NgaySinh">Ngày Sinh</label>
